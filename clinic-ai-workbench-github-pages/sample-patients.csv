@@ -1,0 +1,3 @@
+id,nameAlias,age,gender,tag,source,status,doctor,chiefComplaint,presentIllness,diagnosis,exam,treatment,nextVisit,followUp,concern
+CSV-001,患者D,22,女,初诊-待评估,线上咨询,待决策,何医生,面部白斑3个月,近期口周色素减退扩大,白癜风待分型,待完善伍德灯检查,建议先完善检查后制定首期疗程,2026-06-29,尚未治疗,担心费用和恢复周期
+CSV-002,患者E,38,男,稳定期-复诊,老患者介绍,治疗中,张医生,手背白斑复诊,治疗后边界变淡无新发,白癜风稳定期,伍德灯荧光较前减弱,维持光疗和外用药,2026-07-03,工作忙复诊不稳定,希望减少到院次数
