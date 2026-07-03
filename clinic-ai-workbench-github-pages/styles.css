@@ -119,10 +119,35 @@ textarea:focus-visible {
   display: grid;
   place-items: center;
   padding: 32px;
+  position: relative;
+  overflow: hidden;
   background:
-    radial-gradient(circle at top left, rgba(67, 86, 199, 0.14), transparent 32%),
-    linear-gradient(135deg, rgba(67, 86, 199, 0.1), rgba(37, 99, 235, 0.06)),
-    var(--bg);
+    radial-gradient(circle at 16% 20%, rgba(84, 112, 229, 0.2), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(43, 76, 155, 0.22), transparent 32%),
+    linear-gradient(135deg, #dce7f8 0%, #9fb4e4 48%, #536fb2 100%);
+}
+
+.login-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./assets/login-cover-service.webp");
+  background-position: 36% center;
+  background-repeat: no-repeat;
+  background-size: max(100vw, 238vh) auto;
+  filter: saturate(1.14) contrast(1.06);
+  opacity: 0.92;
+  pointer-events: none;
+}
+
+.login-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(44, 62, 122, 0.48) 0%, rgba(88, 109, 173, 0.28) 43%, rgba(35, 54, 116, 0.28) 100%),
+    radial-gradient(circle at 50% 50%, rgba(235, 241, 255, 0.2), transparent 36%);
+  pointer-events: none;
 }
 
 .login-stage {
@@ -131,6 +156,8 @@ textarea:focus-visible {
   grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.72fr);
   gap: 18px;
   align-items: stretch;
+  position: relative;
+  z-index: 1;
 }
 
 .login-visual-panel {
@@ -147,6 +174,14 @@ textarea:focus-visible {
   box-shadow: var(--shadow-raised);
   padding: 34px;
   overflow: hidden;
+}
+
+.login-visual-panel .badge {
+  width: max-content;
+  background: rgba(255, 255, 255, 0.92);
+  color: #2f45b5;
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
 }
 
 .login-visual-panel h1 {
@@ -172,8 +207,9 @@ textarea:focus-visible {
 .login-flow-strip span {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.34);
   padding: 12px;
+  backdrop-filter: blur(8px);
 }
 
 .login-metrics strong,
@@ -2786,6 +2822,18 @@ textarea:focus-visible {
 
   .login-page {
     padding: 14px;
+  }
+
+  .login-page::before {
+    background-position: center;
+    background-size: cover;
+    opacity: 0.6;
+  }
+
+  .login-page::after {
+    background:
+      linear-gradient(180deg, rgba(32, 49, 104, 0.64), rgba(115, 135, 197, 0.48)),
+      radial-gradient(circle at 50% 18%, rgba(235, 241, 255, 0.26), transparent 30%);
   }
 
   .login-visual-panel,
