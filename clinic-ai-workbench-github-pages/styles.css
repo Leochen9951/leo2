@@ -1914,9 +1914,23 @@ textarea:focus-visible {
   border-radius: 14px;
 }
 
+.guide-register-panel .panel-inner {
+  padding-bottom: 22px;
+}
+
+.guide-register-panel .field.top-gap {
+  margin-bottom: 14px;
+}
+
+.guide-register-panel .textarea.short {
+  display: block;
+}
+
 .guide-register-panel .button-row {
   gap: 10px;
   align-items: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .guide-register-panel .button-row .btn.primary {

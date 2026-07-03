@@ -41,7 +41,7 @@ const patientTabs = [
   { id: "orders", label: "项目/疗程", read: "order:create", alt: "sales:view" },
   { id: "prescriptions", label: "处方监管", read: "prescription:create", alt: "prescription:view" },
   { id: "follow", label: "回访记录", read: "followup:write" },
-  { id: "ai", label: "AI分析", read: "record:read" }
+  { id: "ai", label: "智能分析", read: "record:read" }
 ];
 
 const modules = [
@@ -209,13 +209,13 @@ app.addEventListener("click", async (event) => {
 
   if (action === "save-vasi-snapshot") {
     const patient = getSelectedPatient();
-    if (!canEditSpecialty(user, patient)) return deny("当前角色不能保存VASI/BSA评估。");
+    if (!canEditSpecialty(user, patient)) return deny("当前角色不能保存面积和白斑评分评估。");
     const snapshot = createVasiSnapshot(patient, user.id);
     patient.specialtyAssessment.vasiHistory ||= [];
     patient.specialtyAssessment.vasiHistory.unshift(snapshot);
     patient.medicalRecord.vitiligoAssessment.areaPercent = `${snapshot.bsaPercent}%`;
-    addAudit("specialty:vasiSnapshot", "Patient", patient.id, `保存VASI/BSA：BSA ${snapshot.bsaPercent}%，VASI ${snapshot.vasiScore}。`);
-    showToast("已保存本次VASI/BSA快照。");
+    addAudit("specialty:vasiSnapshot", "Patient", patient.id, `保存面积和白斑评分：体表面积 ${snapshot.bsaPercent}%，白斑评分 ${snapshot.vasiScore}。`);
+    showToast("已保存本次专科评分快照。");
     saveAndRender();
     return;
   }
@@ -899,8 +899,8 @@ app.addEventListener("change", async (event) => {
     const rows = parseCsv(text);
     state.patients = mergeImportedRows(state.patients, rows);
     state.selectedId = state.patients[0]?.id || state.selectedId;
-    addAudit("patient:import", "Patient", "csv", `导入/合并 ${rows.length} 条 CSV 记录。`);
-    showToast(`已导入/合并 ${rows.length} 条 CSV 记录。`);
+    addAudit("patient:import", "Patient", "表格导入", `导入/合并 ${rows.length} 条表格记录。`);
+    showToast(`已导入/合并 ${rows.length} 条表格记录。`);
     target.value = "";
     saveAndRender();
   }
@@ -1189,7 +1189,7 @@ function renderPatientRail(user) {
         ${renderTagFilterChips(tags)}
         <div class="toolbar-row patient-actions-row">
           ${state.module === "patients" && can(user, "patient:create") ? `<button class="btn primary" data-action="add-patient">新建患者</button>` : ""}
-          <label class="btn file-label">导入CSV<input type="file" accept=".csv,text/csv" data-csv="import" /></label>
+          <label class="btn file-label">导入表格<input type="file" accept=".csv,text/csv" data-csv="import" /></label>
         </div>
         <div class="toolbar-row">
           ${can(user, "export:data") ? `<button class="btn ghost" data-action="copy-json">复制备份数据</button>` : ""}
@@ -1211,6 +1211,22 @@ function renderTagFilterChips(tags) {
       ${visibleTags.map((tag) => `<button class="tag-chip ${state.tagFilter === tag ? "active" : ""}" data-action="tag-filter" data-tag="${escapeAttr(tag)}">${escapeHtml(shortTag(tag))}</button>`).join("")}
     </div>
   `;
+}
+
+function displayChineseCode(value) {
+  let text = String(value || "").trim();
+  while (/^[A-Za-z]+-?/.test(text)) {
+    text = text.replace(/^[A-Za-z]+-?/, "");
+  }
+  return text || "未生成";
+}
+
+function displayPatientCode(value) {
+  return `编号：${displayChineseCode(value)}`;
+}
+
+function displayQueueNo(value) {
+  return `队列号：${displayChineseCode(value)}`;
 }
 
 function renderPatientCreateModal(user) {
@@ -1268,7 +1284,7 @@ function renderCrudModal(user) {
     const canEdit = canEditPatientArray(user, modal.arrayName, patient);
     return renderCrudModalShell({
       title: `${config.title}编辑`,
-      subtitle: `${patient.nameAlias} · ${patient.id}`,
+      subtitle: `${patient.nameAlias} · ${displayPatientCode(patient.id)}`,
       body: config.renderer(item, Number(modal.index), modal.arrayName, !canEdit),
       footer: `<button class="btn primary" data-action="close-crud-modal">保存并关闭</button>`
     });
@@ -1279,7 +1295,7 @@ function renderCrudModal(user) {
     const editable = can(user, "patient:basic") && canAccessPatient(user, targetPatient, "basic");
     return renderCrudModalShell({
       title: "患者基本信息",
-      subtitle: `${targetPatient.nameAlias} · ${targetPatient.id}`,
+      subtitle: `${targetPatient.nameAlias} · ${displayPatientCode(targetPatient.id)}`,
       body: renderBasicEditor(targetPatient, !editable),
       footer: `<button class="btn primary" data-action="close-crud-modal">保存并关闭</button>`
     });
@@ -1392,7 +1408,7 @@ function renderPatientCard(patient) {
       <span class="patient-card-avatar">${escapeHtml(patient.nameAlias.slice(0, 1) || "患")}</span>
       <div class="patient-card-main">
         <strong>${escapeHtml(patient.nameAlias)}</strong>
-        <span>${escapeHtml(patient.id)}</span>
+        <span>${escapeHtml(displayPatientCode(patient.id))}</span>
         <div class="patient-card-tags">
           <em class="${riskClassName(analysis.riskLevel)}">${analysis.riskLevel}</em>
           <em>${escapeHtml(registration?.status || patient.status || "未挂号")}</em>
@@ -1491,7 +1507,7 @@ function renderQueueCard(registration, user) {
   return `
     <article class="queue-card">
       <div>
-        <strong>${escapeHtml(registration.queueNo)} · ${escapeHtml(patient?.nameAlias || registration.patientId)}</strong>
+        <strong>${escapeHtml(displayQueueNo(registration.queueNo))} · ${escapeHtml(patient?.nameAlias || "相关患者")}</strong>
         <p class="hint">${escapeHtml(patient?.age || "")}岁 · ${escapeHtml(patient?.gender || "")} · ${escapeHtml(registration.note || "无备注")}</p>
       </div>
       <div class="queue-controls">
@@ -1549,7 +1565,7 @@ function renderPatientHeader(patient) {
     <div class="panel">
       <div class="panel-inner patient-title">
         <div>
-          <h2>${escapeHtml(patient.nameAlias)} <span class="badge">${escapeHtml(patient.id)}</span></h2>
+          <h2>${escapeHtml(patient.nameAlias)} <span class="badge">${escapeHtml(displayPatientCode(patient.id))}</span></h2>
           <p class="hint">${escapeHtml(patient.age)}岁 · ${escapeHtml(patient.gender)} · ${escapeHtml(departmentName(patient.departmentId))} · ${escapeHtml(patient.doctor || userName(patient.ownerUserId) || "未分配")}</p>
         </div>
         <span class="badge">${escapeHtml(patient.status)} / ${escapeHtml(patient.tag)}</span>
@@ -1649,9 +1665,9 @@ function renderSpecialtyAssessment(patient, user) {
       <div class="entry-head specialty-head">
         <div>
           <h3>白癜风专科评估</h3>
-          <p class="hint">部位图、VASI/BSA、照片对比、光疗剂量和疗效趋势在这里统一管理。</p>
+          <p class="hint">部位图、体表面积、白斑评分、照片对比、光疗剂量和疗效趋势在这里统一管理。</p>
         </div>
-        ${canEdit ? `<button class="btn primary" data-action="save-vasi-snapshot">保存本次VASI</button>` : ""}
+        ${canEdit ? `<button class="btn primary" data-action="save-vasi-snapshot">保存本次评分</button>` : ""}
       </div>
       ${renderSpecialtyMetrics(metrics)}
       <div class="specialty-grid">
@@ -1669,12 +1685,12 @@ function renderSpecialtyMetrics(metrics) {
   const trendClass = Number(metrics.vasiChange) <= 0 ? "risk-low" : "risk-mid";
   return `
     <div class="specialty-metrics">
-      <div class="stat"><strong>${metrics.currentBsa}%</strong><span>当前BSA</span></div>
-      <div class="stat"><strong>${metrics.currentVasi}</strong><span>当前VASI</span></div>
+      <div class="stat"><strong>${metrics.currentBsa}%</strong><span>当前体表面积</span></div>
+      <div class="stat"><strong>${metrics.currentVasi}</strong><span>当前白斑评分</span></div>
       <div class="stat"><strong>${metrics.activeRegionCount}</strong><span>受累部位</span></div>
-      <div class="stat"><strong class="${trendClass}">${metrics.vasiChange > 0 ? "+" : ""}${metrics.vasiChange}</strong><span>较基线VASI</span></div>
+      <div class="stat"><strong class="${trendClass}">${metrics.vasiChange > 0 ? "+" : ""}${metrics.vasiChange}</strong><span>较基线评分</span></div>
       <div class="stat"><strong>${metrics.phototherapyCount}</strong><span>光疗次数</span></div>
-      <div class="stat"><strong>${metrics.latestDose || "未填"}</strong><span>最近剂量(mJ/cm2)</span></div>
+      <div class="stat"><strong>${metrics.latestDose || "未填"}</strong><span>最近剂量</span></div>
     </div>
   `;
 }
@@ -1686,7 +1702,7 @@ function renderBodyMap(patient, canEdit, metrics) {
       <div class="entry-head">
         <div>
           <h4>部位图</h4>
-          <p class="hint">点击部位后，在右侧填写BSA和脱色比例。</p>
+          <p class="hint">点击部位后，在右侧填写体表面积和脱色比例。</p>
         </div>
         <span class="badge">${metrics.activeRegionCount} 个部位</span>
       </div>
@@ -1706,7 +1722,7 @@ function renderBodyMap(patient, canEdit, metrics) {
         </div>
         <div class="body-map-legend">
           ${metrics.currentRows.length ? metrics.currentRows.map((row) => `
-            <div><strong>${escapeHtml(row.label)}</strong><span>${row.affectedBsaPercent}% BSA · 脱色${row.depigmentationPercent}% · VASI ${row.vasiScore}</span></div>
+            <div><strong>${escapeHtml(row.label)}</strong><span>体表面积 ${row.affectedBsaPercent}% · 脱色${row.depigmentationPercent}% · 白斑评分 ${row.vasiScore}</span></div>
           `).join("") : `<p class="empty">尚未标记受累部位。</p>`}
         </div>
       </div>
@@ -1720,15 +1736,15 @@ function renderVasiCalculator(patient, canEdit, metrics) {
     <section class="specialty-card">
       <div class="entry-head">
         <div>
-          <h4>VASI/BSA 计算</h4>
-          <p class="hint">VASI = 各部位BSA百分比 × 残余脱色比例后求和。</p>
+          <h4>面积与白斑评分计算</h4>
+          <p class="hint">白斑评分 = 各部位体表面积百分比 × 残余脱色比例后求和。</p>
         </div>
-        <span class="status-pill">BSA ${metrics.currentBsa}% / VASI ${metrics.currentVasi}</span>
+        <span class="status-pill">体表面积 ${metrics.currentBsa}% / 白斑评分 ${metrics.currentVasi}</span>
       </div>
       <div class="table-wrap">
         <table class="data-table vasi-table">
           <thead>
-            <tr><th>部位</th><th>BSA%</th><th>脱色比例</th><th>活动度</th><th>VASI</th><th>备注</th></tr>
+            <tr><th>部位</th><th>体表面积</th><th>脱色比例</th><th>活动度</th><th>白斑评分</th><th>备注</th></tr>
           </thead>
           <tbody>
             ${regions.map((region, index) => renderVasiRow(region, index, !canEdit)).join("")}
@@ -1857,7 +1873,7 @@ function renderEfficacyTrend(patient, metrics) {
       <div class="entry-head">
         <div>
           <h4>疗效趋势</h4>
-          <p class="hint">汇总VASI历史、照片面积和光疗剂量，帮助复诊时看变化。</p>
+          <p class="hint">汇总白斑评分历史、照片面积和光疗剂量，帮助复诊时看变化。</p>
         </div>
         <span class="badge">${trendRows.length} 个趋势点</span>
       </div>
@@ -1865,7 +1881,7 @@ function renderEfficacyTrend(patient, metrics) {
         <div class="trend-board">
           ${trendRows.map((row) => renderTrendPoint(row)).join("")}
         </div>
-      ` : `<p class="empty">暂无趋势数据。保存VASI或记录照片面积后会显示。</p>`}
+      ` : `<p class="empty">暂无趋势数据。保存白斑评分或记录照片面积后会显示。</p>`}
     </section>
   `;
 }
@@ -1873,13 +1889,13 @@ function renderEfficacyTrend(patient, metrics) {
 function buildTrendRows(patient, metrics) {
   const vasiRows = metrics.history.map((item) => ({
     date: item.date,
-    label: "VASI",
+    label: "白斑评分",
     value: Number(item.vasiScore) || 0,
     note: item.note || `${item.regionCount || 0}个部位`
   }));
   const currentExists = vasiRows.some((row) => row.date === todayString());
   if (!currentExists && (metrics.currentVasi || metrics.currentBsa)) {
-    vasiRows.push({ date: todayString(), label: "当前VASI", value: metrics.currentVasi, note: `BSA ${metrics.currentBsa}%` });
+    vasiRows.push({ date: todayString(), label: "当前白斑评分", value: metrics.currentVasi, note: `体表面积 ${metrics.currentBsa}%` });
   }
   const photoRows = metrics.photoAreas.map((item) => ({
     date: item.date,
@@ -2301,7 +2317,7 @@ function renderPrescriptions(patient, user) {
       <h3>处方记录与审核</h3>
       ${canCreate ? `<button class="btn primary" data-action="add-prescription">新增处方草稿</button>` : ""}
     </div>
-    <p class="hint">处方必须由医生手工记录，AI 不自动开方；院长/审核人员用于处方点评和质控追踪。</p>
+    <p class="hint">处方必须由医生手工记录，智能系统不自动开方；院长/审核人员用于处方点评和质控追踪。</p>
     ${items.length ? `<div class="crud-summary-list">${items.map((record) => renderPrescriptionSummary(record, canCreate, canReview)).join("")}</div>` : `<p class="empty">暂无处方记录。</p>`}
   `;
 }
@@ -3043,7 +3059,7 @@ function renderEmptyWorkspace() {
     <div class="panel">
       <div class="panel-inner">
         <h2>暂无患者</h2>
-        <p class="empty">点击左侧“新建患者”或导入 CSV 开始。</p>
+        <p class="empty">点击左侧“新建患者”或导入表格开始。</p>
       </div>
     </div>
   `;

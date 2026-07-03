@@ -51,7 +51,7 @@ export const VITILIGO_TEMPLATE_LABELS = {
 };
 
 export const BODY_REGION_DEFINITIONS = [
-  { id: "face", label: "面部", short: "面", group: "头面颈", hint: "F-VASI可单独观察" },
+  { id: "face", label: "面部", short: "面", group: "头面颈", hint: "面部白斑评分可单独观察" },
   { id: "headNeck", label: "头颈", short: "颈", group: "头面颈", hint: "头皮、耳部、颈部" },
   { id: "trunk", label: "躯干", short: "躯", group: "躯干", hint: "胸背腹腰" },
   { id: "upperLimbs", label: "上肢", short: "臂", group: "四肢", hint: "上臂、前臂、腋区" },
@@ -238,7 +238,7 @@ export const DEMO_PATIENTS = [
       chiefComplaint: "面部白斑约5月余，近期边界较前更明显。",
       presentIllness: "患者曾于外院诊断为白癜风，接受308光疗。近1个月面颈部白斑较前扩大，额部、口周及眉周色素减退明显。",
       pastHistory: "否认甲状腺疾病史，否认药物及食物过敏史。",
-      exam: "面部散在色素脱失斑，伍德灯下呈亮白色荧光，边界较清晰；BMI 21.6，精神状态可。",
+      exam: "面部散在色素脱失斑，伍德灯下呈亮白色荧光，边界较清晰；体重指数 21.6，精神状态可。",
       diagnosis: "白癜风，进展期",
       plan: "建议规律光疗联合外用药，建立4周复诊与每周回访。",
       vitiligoAssessment: {
@@ -607,7 +607,7 @@ export const DEMO_SERVICE_ORDERS = [
 
 export const DEMO_PRESCRIPTIONS = [
   {
-    id: "RX-001",
+    id: "处方-001",
     patientId: "P20260314-001",
     departmentId: "dept-initial",
     doctorUserId: "u-doctor-he",
@@ -622,7 +622,7 @@ export const DEMO_PRESCRIPTIONS = [
     source: "医生手工记录"
   },
   {
-    id: "RX-002",
+    id: "处方-002",
     patientId: "P20260512-003",
     departmentId: "dept-consult",
     doctorUserId: "u-doctor-he",
@@ -633,7 +633,7 @@ export const DEMO_PRESCRIPTIONS = [
     estimatedAmount: 0,
     status: "草稿",
     reviewBy: "",
-    reviewNote: "AI不得自动生成处方，仅保留医生草稿。",
+    reviewNote: "智能系统不得自动生成处方，仅保留医生草稿。",
     source: "医生手工记录"
   }
 ];
@@ -661,7 +661,7 @@ export const DEMO_AUDIT_LOGS = [
     actorId: "u-doctor-he",
     action: "prescription:create",
     targetType: "PrescriptionRecord",
-    targetId: "RX-001",
+    targetId: "处方-001",
     detail: "医生手工记录处方，等待审核。"
   },
   {
@@ -670,7 +670,7 @@ export const DEMO_AUDIT_LOGS = [
     actorId: "u-director",
     action: "prescription:review",
     targetType: "PrescriptionRecord",
-    targetId: "RX-001",
+    targetId: "处方-001",
     detail: "处方审核通过。"
   }
 ];
@@ -941,7 +941,7 @@ export function createServiceOrder({ patientId, departmentId, doctorUserId }) {
 
 export function createPrescriptionRecord({ patientId, departmentId, doctorUserId }) {
   return {
-    id: `RX-${Date.now().toString(36)}`,
+    id: `处方-${Date.now()}`,
     patientId,
     departmentId,
     doctorUserId,
@@ -952,7 +952,7 @@ export function createPrescriptionRecord({ patientId, departmentId, doctorUserId
     estimatedAmount: 0,
     status: "草稿",
     reviewBy: "",
-    reviewNote: "AI不得自动生成处方；本记录需由医生手工填写并提交审核。",
+    reviewNote: "智能系统不得自动生成处方；本记录需由医生手工填写并提交审核。",
     source: "医生手工记录"
   };
 }
@@ -1042,10 +1042,10 @@ export function getRecordQuality(patient) {
   const missing = checks.filter((item) => !String(item.value || "").trim()).map((item) => item.label);
   const warnings = [];
   if (!record.signedBy) warnings.push("病历尚未医生签名");
-  if (!record.aiSummaryConfirmedBy) warnings.push("AI摘要/风险分析尚未医生确认");
+  if (!record.aiSummaryConfirmedBy) warnings.push("智能摘要/风险分析尚未医生确认");
   if (!patient?.examReports?.length) warnings.push("缺少检查报告记录");
   if (!patient?.imageTimeline?.length) warnings.push("缺少照片时间轴记录");
-  if (!specialty.currentBsa && !specialty.currentVasi) warnings.push("缺少VASI/BSA专科量化记录");
+  if (!specialty.currentBsa && !specialty.currentVasi) warnings.push("缺少面积和白斑评分专科量化记录");
   const score = Math.max(0, Math.round(((checks.length - missing.length) / checks.length) * 100));
   const status = missing.length === 0 ? "合格" : missing.length <= 3 ? "待完善" : "严重缺项";
   return { score, status, missing, warnings, checkedCount: checks.length };
@@ -1210,7 +1210,7 @@ export function formatMedicalRecordText(patient, state = {}) {
     `颜色/边界/表面：${vitiligo.color || "未记录"} / ${vitiligo.boundary || "未记录"} / ${vitiligo.surface || "未记录"}`,
     `伍德灯：${vitiligo.woodLamp || "未记录"}`,
     `面积估算：${vitiligo.areaPercent || "未记录"}`,
-    `量化评估：BSA ${specialty.currentBsa || 0}%　VASI ${specialty.currentVasi || 0}　受累部位 ${specialty.activeRegionCount || 0} 个`,
+    `量化评估：体表面积 ${specialty.currentBsa || 0}%　白斑评分 ${specialty.currentVasi || 0}　受累部位 ${specialty.activeRegionCount || 0} 个`,
     `主要部位：${specialty.currentRows.length ? specialty.currentRows.map((row) => `${row.label}${row.affectedBsaPercent}%/脱色${row.depigmentationPercent}%`).join("；") : "未记录"}`,
     `光疗剂量：${specialty.latestSession ? `${specialty.latestSession.date} ${specialty.latestSession.bodySite || "未填部位"} ${specialty.latestSession.doseMj || "未填"}mJ/cm2，反应：${specialty.latestSession.erythema || "未记录"}` : "未记录"}`,
     `毛发变白：${vitiligo.hairWhitening || "未记录"}　同形反应：${vitiligo.koebner || "未记录"}`,
@@ -1409,7 +1409,7 @@ export function makePatientSummary(patient) {
 export function mergeImportedRows(currentPatients, rows) {
   const patients = [...currentPatients];
   rows.forEach((row, index) => {
-    const id = row.id || row.匿名编号 || row.patientId || `CSV-${Date.now().toString(36)}-${index + 1}`;
+    const id = row.id || row.匿名编号 || row.patientId || `导入-${Date.now()}-${index + 1}`;
     const existingIndex = patients.findIndex((item) => item.id === id);
     const base = existingIndex >= 0 ? patients[existingIndex] : createEmptyPatient(patients.length + 1);
     const imported = normalizePatient({
@@ -1688,14 +1688,14 @@ function buildAnomalies(state, orders, prescriptions, refunds) {
       anomalies.push({
         level: record.status === "退回" ? "高" : "中",
         title: "处方待处理",
-        detail: `${patientName(state, record.patientId)} 的处方 ${record.drugName || record.id} 状态为 ${record.status}。`
+        detail: `${patientName(state, record.patientId)} 的${record.drugName ? `处方“${record.drugName}”` : "处方记录"}状态为 ${record.status}。`
       });
     }
     if (/AI|自动/.test(record.source || "") && record.status !== "草稿") {
       anomalies.push({
         level: "高",
         title: "处方来源异常",
-        detail: `${record.id} 标记为 AI 或自动来源，系统要求处方只能由医生手工确认。`
+        detail: "处方来源标记为智能或自动，系统要求处方只能由医生手工确认。"
       });
     }
   });
