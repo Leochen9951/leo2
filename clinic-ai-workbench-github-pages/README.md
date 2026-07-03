@@ -46,3 +46,4 @@ GitHub Pages 需要保留这些文件：
 - `PUBLIC_DEMO_CHECKLIST.md`
 
 不要把本机工作目录里的 `tests`、`scripts`、`work`、截图缓存、浏览器缓存、真实资料或其他临时文件上传到公开仓库。
+ 
