@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">罗斯的房间通关图解</title>
+  <desc id="desc">展示罗斯的房间中枕头堡、太空、跳房子、恐龙、海盗和城堡等玩法分区。</desc>
+  <style>
+    .bg{fill:#f9eef7}.panel{fill:#fffdf7;stroke:#4a3d72;stroke-width:4}.zone{stroke:#18212b;stroke-width:4}.purple{fill:#6f63c9}.blue{fill:#2466ad}.yellow{fill:#f2c94c}.coral{fill:#e95d48}.teal{fill:#0f766e}.paper{fill:#ffffff}.note{fill:#18212b;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:800}.small{font-size:23px}.mid{font-size:30px}.big{font-size:42px}.tag{fill:#ffffff;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:900;font-size:26px}.darktag{fill:#18212b;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:900;font-size:26px}.line{stroke:#18212b;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;fill:none;marker-end:url(#arrow)}
+  </style>
+  <defs><marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#18212b"/></marker></defs>
+  <rect class="bg" width="960" height="540"/>
+  <rect class="panel" x="42" y="40" width="876" height="460" rx="24"/>
+  <text class="note big" x="82" y="98">03 罗斯的房间：每换场景先试新能力</text>
+  <rect class="zone purple" x="96" y="140" width="190" height="110" rx="18"/><text class="tag" x="135" y="183">太空区</text><text class="tag" x="121" y="218">大小变化</text>
+  <rect class="zone blue" x="386" y="128" width="190" height="110" rx="18"/><text class="tag" x="421" y="171">跳房子</text><text class="tag" x="420" y="206">看屏报点</text>
+  <rect class="zone teal" x="676" y="140" width="190" height="110" rx="18"/><text class="tag" x="719" y="183">恐龙区</text><text class="tag" x="703" y="218">咬杆压钮</text>
+  <rect class="zone coral" x="222" y="320" width="205" height="104" rx="18"/><text class="tag" x="260" y="361">海盗炮战</text><text class="tag" x="253" y="396">先打触手</text>
+  <rect class="zone yellow" x="536" y="320" width="205" height="104" rx="18"/><text class="darktag" x="574" y="361">城堡战斗</text><text class="darktag" x="563" y="396">冰火分工</text>
+  <circle class="paper" cx="480" cy="272" r="62" stroke="#18212b" stroke-width="4"/>
+  <text class="note mid" x="433" y="266">玩具</text><text class="note mid" x="433" y="303">主枢纽</text>
+  <path class="line" d="M435 250 C370 214 333 188 290 184"/>
+  <path class="line" d="M480 210 V242"/>
+  <path class="line" d="M525 250 C592 214 630 188 672 184"/>
+  <path class="line" d="M438 310 C390 332 364 350 428 368"/>
+  <path class="line" d="M522 310 C570 332 598 350 536 368"/>
+  <text class="note small" x="92" y="464">口令：先试能力，再找出口；开放区域绕边走，别漏迷你游戏。</text>
+</svg>

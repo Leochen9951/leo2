@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">阁楼通关图解</title>
+  <desc id="desc">展示阁楼章节中 May 声音、Cody 铙钹、交响乐云雨机关和最终节奏舞台的通关思路。</desc>
+  <style>
+    .bg{fill:#f2eefb}.panel{fill:#fffdf7;stroke:#4a3d72;stroke-width:4}.staff{stroke:#18212b;stroke-width:4}.purple{fill:#6f63c9}.blue{fill:#2466ad}.coral{fill:#e95d48}.teal{fill:#0f766e}.yellow{fill:#f2c94c}.note{fill:#18212b;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:800}.small{font-size:24px}.mid{font-size:30px}.big{font-size:42px}.tag{fill:#ffffff;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:900;font-size:26px}.darktag{fill:#18212b;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:900;font-size:26px}.line{stroke:#18212b;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;fill:none;marker-end:url(#arrow)}
+  </style>
+  <defs><marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#18212b"/></marker></defs>
+  <rect class="bg" width="960" height="540"/>
+  <rect class="panel" x="42" y="40" width="876" height="460" rx="24"/>
+  <text class="note big" x="82" y="98">07 阁楼：先听一轮，再按节拍进场</text>
+  <g>
+    <line class="staff" x1="110" y1="174" x2="850" y2="174"/>
+    <line class="staff" x1="110" y1="214" x2="850" y2="214"/>
+    <line class="staff" x1="110" y1="254" x2="850" y2="254"/>
+    <line class="staff" x1="110" y1="294" x2="850" y2="294"/>
+    <line class="staff" x1="110" y1="334" x2="850" y2="334"/>
+  </g>
+  <rect class="coral" x="120" y="142" width="190" height="88" rx="16"/>
+  <text class="tag" x="158" y="176">May 声音</text><text class="tag" x="146" y="209">喊开平台</text>
+  <rect class="blue" x="650" y="142" width="190" height="88" rx="16"/>
+  <text class="tag" x="687" y="176">Cody 铙钹</text><text class="tag" x="680" y="209">护盾破雾</text>
+  <circle class="yellow" cx="480" cy="254" r="70" stroke="#18212b" stroke-width="4"/>
+  <text class="darktag" x="428" y="248">交响乐</text><text class="darktag" x="415" y="282">云雨机关</text>
+  <path class="line" d="M312 190 C365 203 405 222 432 248"/>
+  <path class="line" d="M648 190 C595 203 555 222 528 248"/>
+  <rect class="purple" x="258" y="378" width="444" height="50" rx="16"/>
+  <rect class="teal" x="258" y="378" width="276" height="50" rx="16"/>
+  <text class="tag" x="376" y="413">最终舞台节奏条</text>
+  <text class="note small" x="92" y="464">口令：一人喊拍，一人报到位；别连按，先观察循环。</text>
+</svg>

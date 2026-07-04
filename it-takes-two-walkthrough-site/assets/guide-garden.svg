@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">花园通关图解</title>
+  <desc id="desc">展示花园章节中 Cody 植物变形、May 浇灌与镰刀、紫色污染和 Joy Boss 的通关思路。</desc>
+  <style>
+    .bg{fill:#eef8e9}.panel{fill:#fffdf7;stroke:#315c2f;stroke-width:4}.soil{fill:#8a5536;stroke:#4f2d1e;stroke-width:4}.leaf{fill:#4f8a45}.teal{fill:#0f766e}.blue{fill:#2466ad}.coral{fill:#e95d48}.purple{fill:#6f63c9}.yellow{fill:#f2c94c}.note{fill:#18212b;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:800}.small{font-size:24px}.mid{font-size:30px}.big{font-size:42px}.tag{fill:#ffffff;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:900;font-size:26px}.darktag{fill:#18212b;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:900;font-size:26px}.line{stroke:#18212b;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;fill:none;marker-end:url(#arrow)}
+  </style>
+  <defs><marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#18212b"/></marker></defs>
+  <rect class="bg" width="960" height="540"/>
+  <rect class="panel" x="42" y="40" width="876" height="460" rx="24"/>
+  <text class="note big" x="82" y="98">06 花园：Cody 铺路，May 清障和浇灌</text>
+  <rect class="soil" x="104" y="332" width="752" height="96" rx="24"/>
+  <path class="leaf" d="M420 334 C390 260 438 202 480 166 C522 202 570 260 540 334 Z"/>
+  <path class="leaf" d="M398 306 C338 268 302 234 282 174 C348 184 402 224 434 288 Z"/>
+  <path class="leaf" d="M562 306 C622 268 658 234 678 174 C612 184 558 224 526 288 Z"/>
+  <rect class="teal" x="100" y="150" width="214" height="86" rx="16"/>
+  <text class="tag" x="134" y="184">Cody 变形</text><text class="tag" x="123" y="216">藤蔓、叶片、炮台</text>
+  <rect class="blue" x="646" y="150" width="214" height="86" rx="16"/>
+  <text class="tag" x="681" y="184">May 工具</text><text class="tag" x="678" y="216">水枪、镰刀</text>
+  <path class="line" d="M316 200 C374 218 411 256 438 304"/>
+  <path class="line" d="M644 200 C586 218 549 256 522 304"/>
+  <path class="purple" d="M190 356 C230 320 272 348 300 380 C248 420 212 394 190 356 Z"/>
+  <text class="tag" x="193" y="379">紫泥</text>
+  <path class="line" d="M706 340 C654 314 610 328 570 362"/>
+  <circle class="yellow" cx="716" cy="350" r="40" stroke="#18212b" stroke-width="4"/>
+  <text class="darktag" x="676" y="359">Joy</text>
+  <text class="note small" x="92" y="464">口令：先清场，再解机关；Boss 先冲洗污染，再让 Cody 控制本体。</text>
+</svg>

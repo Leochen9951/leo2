@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">雪景球通关图解</title>
+  <desc id="desc">展示雪景球章节中冬季村庄三座塔、磁力移动、水下管线和滑坡段落的通关思路。</desc>
+  <style>
+    .bg{fill:#eaf7fb}.panel{fill:#fffdf7;stroke:#24506b;stroke-width:4}.snow{fill:#ffffff;stroke:#a7c7d8;stroke-width:4}.tower{fill:#2466ad;stroke:#18212b;stroke-width:4}.red{fill:#e95d48}.blue{fill:#2466ad}.teal{fill:#0f766e}.ice{fill:#d6f2ff}.note{fill:#18212b;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:800}.small{font-size:24px}.mid{font-size:30px}.big{font-size:42px}.tag{fill:#ffffff;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:900;font-size:26px}.darktag{fill:#18212b;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:900;font-size:26px}.line{stroke:#18212b;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;fill:none;marker-end:url(#arrow)}
+  </style>
+  <defs><marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#18212b"/></marker></defs>
+  <rect class="bg" width="960" height="540"/>
+  <rect class="panel" x="42" y="40" width="876" height="460" rx="24"/>
+  <text class="note big" x="82" y="98">05 雪景球：先开三座塔，再沿管线补漏</text>
+  <path class="snow" d="M92 374 C168 312 252 332 318 292 C398 244 486 264 548 304 C625 354 713 322 858 376 L858 438 L92 438 Z"/>
+  <g>
+    <path class="tower" d="M170 268 H235 L250 378 H155 Z"/><rect class="red" x="183" y="219" width="40" height="52" rx="8"/><text class="tag" x="151" y="411">左塔</text>
+    <path class="tower" d="M446 232 H516 L536 378 H426 Z"/><rect class="red" x="464" y="181" width="34" height="52" rx="8"/><text class="tag" x="436" y="411">中塔</text>
+    <path class="tower" d="M723 268 H788 L803 378 H708 Z"/><rect class="red" x="736" y="219" width="40" height="52" rx="8"/><text class="tag" x="704" y="411">右塔</text>
+  </g>
+  <circle class="red" cx="338" cy="185" r="42"/><circle class="blue" cx="622" cy="185" r="42"/>
+  <text class="tag" x="318" y="195">N</text><text class="tag" x="604" y="195">S</text>
+  <path class="line" d="M384 185 H576"/>
+  <text class="note mid" x="397" y="160">磁力：先站稳锚点</text>
+  <rect class="ice" x="338" y="324" width="286" height="62" rx="20"/>
+  <path class="line" d="M360 354 C420 332 494 378 568 344"/>
+  <text class="darktag" x="375" y="364">水下管线找发电机</text>
+  <text class="note small" x="92" y="464">口令：你当锚点，我飞过去；村庄开放区先绕边找小游戏。</text>
+</svg>

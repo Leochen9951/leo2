@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="《双人成行》中文通关教程：七大章节路线、原创通关图解、双人分工、常见卡点、迷你游戏与一周目通关计划。"
+    />
+    <title>双人成行通关教程 | 七章图解与卡点速查</title>
+    <link rel="preload" as="image" href="./assets/hero-coop-adventure.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <div class="progress-line" aria-hidden="true"><span data-progress></span></div>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="回到通关教程首页">
+        <span class="brand-badge">2</span>
+        <span>通关路线图</span>
+      </a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="打开导航"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+        data-nav-toggle
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="primary-nav" aria-label="页面导航">
+        <a href="#route">路线</a>
+        <a href="#quick">卡点</a>
+        <a href="#visual-guide">图解</a>
+        <a href="#chapters">章节</a>
+        <a href="#completion">收集</a>
+        <a href="#sources">来源</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="./assets/hero-coop-adventure.png"
+          alt="两名手作玩具风格的冒险者携手通过微缩世界木桥"
+          width="1672"
+          height="941"
+        />
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <p class="eyebrow">双人协作通关手册</p>
+          <h1 id="hero-title">双人成行通关教程</h1>
+          <p class="hero-lead">
+            从工具棚到阁楼，把七大章节拆成路线、分工、原创图解、卡点和回放清单。适合第一次通关时开在旁边，也适合补漏迷你游戏时快速定位。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#route">查看路线图</a>
+            <a class="button button-ghost" href="#visual-guide">看每章图解</a>
+          </div>
+          <p class="spoiler-note">包含轻度章节与机制剧透，不包含结局对白复述。</p>
+        </div>
+        <div class="hero-stats" aria-label="教程覆盖范围">
+          <div>
+            <strong>7</strong>
+            <span>主线章节</span>
+          </div>
+          <div>
+            <strong>25</strong>
+            <span>隐藏迷你游戏</span>
+          </div>
+          <div>
+            <strong>2</strong>
+            <span>玩家全程配合</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section route-section" id="route" aria-labelledby="route-title">
+        <div class="section-inner">
+          <div class="section-heading reveal">
+            <p class="section-kicker">一周目路线</p>
+            <h2 id="route-title">按这个顺序推，别急着抢节奏</h2>
+            <p>
+              首次游玩是固定线性推进。建议一晚打一到两个大章节，遇到卡点先交换“我负责什么、你等哪个信号”，比反复硬跳更快。
+            </p>
+          </div>
+          <ol class="route-map" aria-label="七大章节路线">
+            <li class="reveal">
+              <button type="button" data-scroll-to="chapter-shed">
+                <span>01</span>
+                <strong>工具棚</strong>
+                <em>基础移动与工具配合</em>
+              </button>
+            </li>
+            <li class="reveal">
+              <button type="button" data-scroll-to="chapter-tree">
+                <span>02</span>
+                <strong>大树</strong>
+                <em>树脂、火柴与战斗节奏</em>
+              </button>
+            </li>
+            <li class="reveal">
+              <button type="button" data-scroll-to="chapter-room">
+                <span>03</span>
+                <strong>罗斯的房间</strong>
+                <em>玩具、太空、童话大混合</em>
+              </button>
+            </li>
+            <li class="reveal">
+              <button type="button" data-scroll-to="chapter-clock">
+                <span>04</span>
+                <strong>布谷鸟钟</strong>
+                <em>分身、时间与精确同步</em>
+              </button>
+            </li>
+            <li class="reveal">
+              <button type="button" data-scroll-to="chapter-globe">
+                <span>05</span>
+                <strong>雪景球</strong>
+                <em>磁力、滑冰与开放区域</em>
+              </button>
+            </li>
+            <li class="reveal">
+              <button type="button" data-scroll-to="chapter-garden">
+                <span>06</span>
+                <strong>花园</strong>
+                <em>植物形态与清障推进</em>
+              </button>
+            </li>
+            <li class="reveal">
+              <button type="button" data-scroll-to="chapter-attic">
+                <span>07</span>
+                <strong>阁楼</strong>
+                <em>音乐、节拍与最终舞台</em>
+              </button>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section quick-section" id="quick" aria-labelledby="quick-title">
+        <div class="section-inner">
+          <div class="section-heading reveal">
+            <p class="section-kicker">卡关速查</p>
+            <h2 id="quick-title">先确认问题类型，再换打法</h2>
+          </div>
+          <div class="quick-grid">
+            <article class="quick-card reveal">
+              <span class="quick-index">A</span>
+              <h3>跳跃距离总差一点</h3>
+              <p>先确认是否用完整的二段跳、冲刺、抓边三段节奏。很多早期平台不是难跳，而是少按了一段位移。</p>
+            </article>
+            <article class="quick-card reveal">
+              <span class="quick-index">B</span>
+              <h3>双人机关不同步</h3>
+              <p>约定一个短口令，例如“站好、三二一、按”。不要边跑边喊，先让两个人都站到触发点。</p>
+            </article>
+            <article class="quick-card reveal">
+              <span class="quick-index">C</span>
+              <h3>Boss 场面太乱</h3>
+              <p>先分清谁负责制造破绽，谁负责输出弱点。失败后不要立刻复活冲上去，先观察 Boss 的三到四个循环动作。</p>
+            </article>
+            <article class="quick-card reveal">
+              <span class="quick-index">D</span>
+              <h3>迷你游戏漏掉</h3>
+              <p>开放区域先绕边走，看到双人操作台、分岔路、异常道具就停一下。通关后可以通过章节选择补漏。</p>
+            </article>
+            <article class="quick-card reveal">
+              <span class="quick-index">E</span>
+              <h3>线上延迟影响操作</h3>
+              <p>节奏机关尽量让延迟低的一方执行高精度跳跃，另一方负责稳定开关、牵引或站位。</p>
+            </article>
+            <article class="quick-card reveal">
+              <span class="quick-index">F</span>
+              <h3>搭档一直看不到你</h3>
+              <p>用“我在左高台”“看黄色按钮旁边”这种位置描述，少说“这里”“那边”。这游戏的沟通比操作更值钱。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section visual-guide-section" id="visual-guide" aria-labelledby="visual-guide-title">
+        <div class="section-inner">
+          <div class="section-heading reveal">
+            <p class="section-kicker">每章图解</p>
+            <h2 id="visual-guide-title">通关图片和技巧按章节放好</h2>
+            <p>
+              下面的图片是原创通关图解，用来标出关键机关、Boss 处理顺序和双人分工。每张卡片都附了外部攻略案例链接，想看更细流程时可以继续打开对照。
+            </p>
+          </div>
+
+          <div class="visual-grid">
+            <article class="visual-card reveal" id="visual-shed">
+              <figure class="guide-figure">
+                <img src="./assets/guide-shed.svg" alt="工具棚章节通关图解：吸尘器、钉子锤子机关和工具箱 Boss 顺序" width="960" height="540" loading="lazy" />
+                <figcaption>工具棚：先造落脚点，再抓 Boss 破绽。</figcaption>
+              </figure>
+              <div class="visual-content">
+                <p class="guide-meta">01 The Shed</p>
+                <h3>工具棚</h3>
+                <p>这一章是基础课，别急着跑图，先把二段跳、冲刺、抓边和“一个人先站稳”的节奏练顺。</p>
+                <ul class="tip-list">
+                  <li>吸尘器 Boss：一人吸进火弹，另一人用管口瞄准脸部输出。</li>
+                  <li>钉子平台：Cody 先固定落脚点，May 再用锤子起跳和摆荡。</li>
+                  <li>工具箱 Boss：先躲手臂横扫，Cody 钉住手臂后，May 沿路线敲锁扣。</li>
+                </ul>
+                <p class="mini-note">迷你游戏提醒：工具棚前段多检查岔路和可互动装置，通关后可用章节选择补漏。</p>
+                <div class="case-links" aria-label="工具棚外部案例">
+                  <a href="https://www.gamepur.com/guides/it-takes-two-the-shed-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">Gamepur 工具棚攻略</a>
+                  <a href="https://www.powerpyx.com/it-takes-two-all-minigame-locations/" target="_blank" rel="noreferrer">PowerPyx 迷你游戏位置</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="visual-card reveal" id="visual-tree">
+              <figure class="guide-figure">
+                <img src="./assets/guide-tree.svg" alt="大树章节通关图解：树脂、火柴、Boss 格栅和逃离飞行段" width="960" height="540" loading="lazy" />
+                <figcaption>大树：树脂负责制造破绽，火柴负责收掉弱点。</figcaption>
+              </figure>
+              <div class="visual-content">
+                <p class="guide-meta">02 The Tree</p>
+                <h3>大树</h3>
+                <p>从这里开始战斗压力变高，最重要的是别各打各的，先约定谁铺树脂、谁点火、谁喊飞行方向。</p>
+                <ul class="tip-list">
+                  <li>树脂别乱涂，优先贴敌人弱点、机关缺口和移动目标。</li>
+                  <li>Boss 场地先铺满可引爆区域，再把敌人引到格栅附近。</li>
+                  <li>逃离飞行段只保留一个主指挥，另一个人负责跟随和及时微调。</li>
+                </ul>
+                <p class="mini-note">迷你游戏提醒：树洞和基地段落留意分岔平台，紫色提示物通常意味着可互动玩法。</p>
+                <div class="case-links" aria-label="大树外部案例">
+                  <a href="https://www.gamepur.com/guides/it-takes-two-the-tree-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">Gamepur 大树攻略</a>
+                  <a href="https://hone.gg/blog/it-takes-two-chapters-list/" target="_blank" rel="noreferrer">Hone 章节与 Boss 要点</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="visual-card reveal" id="visual-room">
+              <figure class="guide-figure">
+                <img src="./assets/guide-room.svg" alt="罗斯的房间通关图解：太空区、跳房子、恐龙、海盗和城堡分区" width="960" height="540" loading="lazy" />
+                <figcaption>罗斯的房间：玩法切换最多，先试能力再找出口。</figcaption>
+              </figure>
+              <div class="visual-content">
+                <p class="guide-meta">03 Rose's Room</p>
+                <h3>罗斯的房间</h3>
+                <p>这是最长也最花的一章，真正的难点不是单一操作，而是每隔一段就要换一套协作语言。</p>
+                <ul class="tip-list">
+                  <li>太空区先试大小变化，小体型进窄路，大体型压板和开路。</li>
+                  <li>跳房子和动物按钮段，一人看前方提示，一人站按钮响应。</li>
+                  <li>海盗炮战先打干扰物，再集中输出主目标，别两个人同时乱转船。</li>
+                </ul>
+                <p class="mini-note">迷你游戏提醒：玩具区开放范围大，先绕边检查枕头堡、太空电梯和游乐设施旁边。</p>
+                <div class="case-links" aria-label="罗斯的房间外部案例">
+                  <a href="https://www.gamepur.com/guides/it-takes-two-roses-room-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">Gamepur 罗斯的房间攻略</a>
+                  <a href="https://www.powerpyx.com/it-takes-two-trophy-guide-roadmap/" target="_blank" rel="noreferrer">PowerPyx 奖杯路线</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="visual-card reveal" id="visual-clock">
+              <figure class="guide-figure">
+                <img src="./assets/guide-clock.svg" alt="布谷鸟钟章节通关图解：Cody 时间控制、May 分身和公牛 Boss 顺序" width="960" height="540" loading="lazy" />
+                <figcaption>布谷鸟钟：May 留分身，Cody 调时间。</figcaption>
+              </figure>
+              <div class="visual-content">
+                <p class="guide-meta">04 Cuckoo Clock</p>
+                <h3>布谷鸟钟</h3>
+                <p>这一章最吃同步。很多失败不是跳不过去，而是分身点、时间进度和起跑口令没有统一。</p>
+                <ul class="tip-list">
+                  <li>May 先在安全位置放分身，需要穿门或躲冲撞时再瞬移回来。</li>
+                  <li>Cody 用时间控制还原道路、移动平台或按钮，调到位后再叫 May 行动。</li>
+                  <li>公牛 Boss 让它锁定按钮位置，May 最后一刻瞬移，让冲撞打到机关。</li>
+                </ul>
+                <p class="mini-note">迷你游戏提醒：钟楼区域完成机关前先绕平台，很多小游戏入口不在主路正中。</p>
+                <div class="case-links" aria-label="布谷鸟钟外部案例">
+                  <a href="https://www.gamepur.com/guides/it-takes-two-cuckoo-clock-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">Gamepur 布谷鸟钟攻略</a>
+                  <a href="https://www.exitlag.com/blog/it-takes-two-chapters-guide/" target="_blank" rel="noreferrer">ExitLag 章节指南</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="visual-card reveal" id="visual-globe">
+              <figure class="guide-figure">
+                <img src="./assets/guide-globe.svg" alt="雪景球章节通关图解：冬季村庄三座塔、磁力锚点和水下管线" width="960" height="540" loading="lazy" />
+                <figcaption>雪景球：先开三座塔，再沿管线探索。</figcaption>
+              </figure>
+              <div class="visual-content">
+                <p class="guide-meta">05 Snow Globe</p>
+                <h3>雪景球</h3>
+                <p>雪景球的核心是磁力和开放区探索。先判断吸引还是排斥，再决定谁站稳当锚点。</p>
+                <ul class="tip-list">
+                  <li>冬季村庄先完成三座钟塔，解锁更多区域后再补周边小游戏。</li>
+                  <li>磁力跳跃时一个人固定位置，另一个人再飞，避免两个人同时移动。</li>
+                  <li>水下区域跟着管线找发电机，遇到大范围危险先拉开距离再回头。</li>
+                </ul>
+                <p class="mini-note">迷你游戏提醒：滑冰、钟塔和水下分支都容易藏小游戏，开放区先扫边再推进主目标。</p>
+                <div class="case-links" aria-label="雪景球外部案例">
+                  <a href="https://www.gamepur.com/guides/it-takes-two-snowglobe-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">Gamepur 雪景球攻略</a>
+                  <a href="https://www.powerpyx.com/it-takes-two-all-minigame-locations/" target="_blank" rel="noreferrer">PowerPyx 全迷你游戏</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="visual-card reveal" id="visual-garden">
+              <figure class="guide-figure">
+                <img src="./assets/guide-garden.svg" alt="花园章节通关图解：Cody 植物变形、May 浇灌清障和 Joy Boss" width="960" height="540" loading="lazy" />
+                <figcaption>花园：Cody 铺路，May 清障和浇灌。</figcaption>
+              </figure>
+              <div class="visual-content">
+                <p class="guide-meta">06 Garden</p>
+                <h3>花园</h3>
+                <p>这一章的重点是先处理持续干扰，再解机关。Cody 每次变形前最好说清楚下一步要做什么。</p>
+                <ul class="tip-list">
+                  <li>Cody 用藤蔓拉敌人或盾牌，May 负责镰刀输出和水枪清理。</li>
+                  <li>植物平台段按接力处理，一人铺路，另一人通过后马上回头帮忙。</li>
+                  <li>Joy Boss 先冲洗紫色污染，再让 Cody 进入控制状态，May 攻击暴露部位。</li>
+                </ul>
+                <p class="mini-note">迷你游戏提醒：青蛙池塘、温室和分岔花坛都值得慢一点搜，别只盯主路箭头。</p>
+                <div class="case-links" aria-label="花园外部案例">
+                  <a href="https://www.gamepur.com/guides/it-takes-two-garden-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">Gamepur 花园攻略</a>
+                  <a href="https://hone.gg/blog/it-takes-two-chapters-list/" target="_blank" rel="noreferrer">Hone 花园机制参考</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="visual-card reveal" id="visual-attic">
+              <figure class="guide-figure">
+                <img src="./assets/guide-attic.svg" alt="阁楼章节通关图解：May 声音、Cody 铙钹、交响乐机关和最终舞台节奏" width="960" height="540" loading="lazy" />
+                <figcaption>阁楼：先听一轮节奏，再进入舞台机关。</figcaption>
+              </figure>
+              <div class="visual-content">
+                <p class="guide-meta">07 The Attic</p>
+                <h3>阁楼</h3>
+                <p>最后一章更考验节奏沟通。不要看到机关就冲，先让两个人都知道循环从哪里开始。</p>
+                <ul class="tip-list">
+                  <li>May 的声音可触发平台或机关，Cody 的铙钹常用于护盾、破雾和打节奏点。</li>
+                  <li>交响乐段先移动云层，再用雨水清掉阻挡，分头找关键目标时持续报位置。</li>
+                  <li>终盘节奏段建议一个人喊拍，另一个人只反馈“到位”或“没到”。</li>
+                </ul>
+                <p class="mini-note">迷你游戏提醒：舞台准备区和排练区有多段支路，进入大门或演出前先检查两侧。</p>
+                <div class="case-links" aria-label="阁楼外部案例">
+                  <a href="https://www.gamepur.com/guides/it-takes-two-the-attic-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">Gamepur 阁楼攻略</a>
+                  <a href="https://www.powerpyx.com/it-takes-two-trophy-guide-roadmap/" target="_blank" rel="noreferrer">PowerPyx 通关路线</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section chapter-section" id="chapters" aria-labelledby="chapters-title">
+        <div class="section-inner">
+          <div class="guide-toolbar reveal">
+            <div>
+              <p class="section-kicker">章节攻略</p>
+              <h2 id="chapters-title">每章看三件事：机制、卡点、口令</h2>
+            </div>
+            <label class="search-box">
+              <span>搜索章节或机制</span>
+              <input type="search" placeholder="例如：磁力、Boss、迷你游戏" data-search />
+            </label>
+          </div>
+
+          <div class="filter-row reveal" role="group" aria-label="章节筛选">
+            <button class="filter-button is-active" type="button" data-filter="all">全部</button>
+            <button class="filter-button" type="button" data-filter="early">前期</button>
+            <button class="filter-button" type="button" data-filter="middle">中期</button>
+            <button class="filter-button" type="button" data-filter="late">后期</button>
+            <button class="filter-button" type="button" data-filter="boss">Boss 卡点</button>
+          </div>
+
+          <div class="chapter-list">
+            <article class="chapter-card reveal" id="chapter-shed" data-stage="early boss" data-keywords="工具棚 工具 锤子 钉子 吸尘器 工具箱 boss">
+              <div class="chapter-topline">
+                <span class="chapter-number">01</span>
+                <div>
+                  <h3>工具棚</h3>
+                  <p>The Shed</p>
+                </div>
+                <label class="done-check">
+                  <input type="checkbox" data-progress-check="chapter-shed" />
+                  <span>已通关</span>
+                </label>
+              </div>
+              <div class="chapter-body">
+                <div>
+                  <h4>小节路线</h4>
+                  <p>Intro、Wake-up Call、Biting the Dust、The Depths、Wired Up</p>
+                </div>
+                <div>
+                  <h4>核心机制</h4>
+                  <p>May 侧重锤子与敲击，Cody 侧重钉子与固定点；后段加入吸尘器气流、风扇和工具箱 Boss。</p>
+                </div>
+                <div>
+                  <h4>通关重点</h4>
+                  <p>先练熟二段跳加冲刺。钉子机关里，Cody 先把可落脚点固定好，May 再出发，不要两个人同时乱跑。</p>
+                </div>
+                <div>
+                  <h4>常见卡点</h4>
+                  <p>工具箱战斗时，Cody 盯住可钉住的手臂木板，May 等破绽出现再沿钉子路线敲锁。</p>
+                </div>
+              </div>
+              <p class="callout">搭档口令：先钉、再跳、等手落下。</p>
+            </article>
+
+            <article class="chapter-card reveal" id="chapter-tree" data-stage="early boss" data-keywords="大树 树脂 火柴 松鼠 黄蜂 飞机 boss">
+              <div class="chapter-topline">
+                <span class="chapter-number">02</span>
+                <div>
+                  <h3>大树</h3>
+                  <p>The Tree</p>
+                </div>
+                <label class="done-check">
+                  <input type="checkbox" data-progress-check="chapter-tree" />
+                  <span>已通关</span>
+                </label>
+              </div>
+              <div class="chapter-body">
+                <div>
+                  <h4>小节路线</h4>
+                  <p>Fresh Air、Captured、Deeply Rooted、Extermination、Getaway</p>
+                </div>
+                <div>
+                  <h4>核心机制</h4>
+                  <p>一人铺树脂，一人用火柴引爆。战斗比工具棚更密集，部分段落还会进入载具与飞行追逐。</p>
+                </div>
+                <div>
+                  <h4>通关重点</h4>
+                  <p>树脂不要乱涂满屏，优先贴在敌人弱点、机关缺口或移动目标上；火柴玩家等树脂覆盖后再引爆。</p>
+                </div>
+                <div>
+                  <h4>常见卡点</h4>
+                  <p>黄蜂战斗要先处理小怪压力，再集中打弱点。飞行段落一个人主喊方向，另一个人少打断。</p>
+                </div>
+              </div>
+              <p class="callout">搭档口令：我上树脂，你点火。</p>
+            </article>
+
+            <article class="chapter-card reveal" id="chapter-room" data-stage="middle" data-keywords="罗斯房间 玩具 太空 枕头堡 跳房子 恐龙 海盗 女王 迷你游戏">
+              <div class="chapter-topline">
+                <span class="chapter-number">03</span>
+                <div>
+                  <h3>罗斯的房间</h3>
+                  <p>Rose's Room</p>
+                </div>
+                <label class="done-check">
+                  <input type="checkbox" data-progress-check="chapter-room" />
+                  <span>已通关</span>
+                </label>
+              </div>
+              <div class="chapter-body">
+                <div>
+                  <h4>小节路线</h4>
+                  <p>Pillow Fort、Spaced Out、Hopscotch、Train Station、Dino Land、Pirates Ahoy、The Greatest Show、Once Upon a Time、Dungeon Crawler、The Queen</p>
+                </div>
+                <div>
+                  <h4>核心机制</h4>
+                  <p>这一章玩法变化最多，包含大小变化、太空移动、玩具关卡、恐龙协作、海盗炮战和童话城堡。</p>
+                </div>
+                <div>
+                  <h4>通关重点</h4>
+                  <p>每换一个场景都先试新能力，不要套用上一章思路。开放玩具区多绕边走，迷你游戏和互动彩蛋很容易藏在角落。</p>
+                </div>
+                <div>
+                  <h4>常见卡点</h4>
+                  <p>大小变化段落里，小体型负责进入窄路和触发内部机关，大体型负责压板、抬升和保护路线。</p>
+                </div>
+              </div>
+              <p class="callout">搭档口令：先试能力，再找出口。</p>
+            </article>
+
+            <article class="chapter-card reveal" id="chapter-clock" data-stage="middle boss" data-keywords="布谷鸟钟 时间 分身 机关 钟楼 boss">
+              <div class="chapter-topline">
+                <span class="chapter-number">04</span>
+                <div>
+                  <h3>布谷鸟钟</h3>
+                  <p>Cuckoo Clock</p>
+                </div>
+                <label class="done-check">
+                  <input type="checkbox" data-progress-check="chapter-clock" />
+                  <span>已通关</span>
+                </label>
+              </div>
+              <div class="chapter-body">
+                <div>
+                  <h4>小节路线</h4>
+                  <p>Gates of Time、Clockworks、A Blast from the Past</p>
+                </div>
+                <div>
+                  <h4>核心机制</h4>
+                  <p>May 的分身用于留点回位，Cody 的时间控制用于还原、暂停或配合机关移动。</p>
+                </div>
+                <div>
+                  <h4>通关重点</h4>
+                  <p>这一章不要抢跑。先让 May 留分身，再让 Cody 调时间，最后同步冲刺，顺序错了就会反复掉下去。</p>
+                </div>
+                <div>
+                  <h4>常见卡点</h4>
+                  <p>钟楼和轨道机关的关键是“预留回退点”。May 别把分身放在太远处，Cody 调时间时要持续报进度。</p>
+                </div>
+              </div>
+              <p class="callout">搭档口令：May 留影，Cody 倒时，一起走。</p>
+            </article>
+
+            <article class="chapter-card reveal" id="chapter-globe" data-stage="middle" data-keywords="雪景球 磁力 冬季村庄 冰下 滑坡 迷你游戏">
+              <div class="chapter-topline">
+                <span class="chapter-number">05</span>
+                <div>
+                  <h3>雪景球</h3>
+                  <p>Snow Globe</p>
+                </div>
+                <label class="done-check">
+                  <input type="checkbox" data-progress-check="chapter-globe" />
+                  <span>已通关</span>
+                </label>
+              </div>
+              <div class="chapter-body">
+                <div>
+                  <h4>小节路线</h4>
+                  <p>Warming Up、Winter Village、Beneath the Ice、Slippery Slopes</p>
+                </div>
+                <div>
+                  <h4>核心机制</h4>
+                  <p>两人围绕磁力吸引与排斥推进，冰面移动和水下探索会让节奏比前几章更开阔。</p>
+                </div>
+                <div>
+                  <h4>通关重点</h4>
+                  <p>看到磁铁、金属平台、滑轨先判断是拉近还是推开。冬季村庄是开放区，完成主目标前先检查支路。</p>
+                </div>
+                <div>
+                  <h4>常见卡点</h4>
+                  <p>磁力跳跃时一人先站稳当锚点，另一人再飞。两个人同时移动会让落点不可控。</p>
+                </div>
+              </div>
+              <p class="callout">搭档口令：你当锚点，我飞过去。</p>
+            </article>
+
+            <article class="chapter-card reveal" id="chapter-garden" data-stage="late boss" data-keywords="花园 植物 杂草 青蛙 温室 boss">
+              <div class="chapter-topline">
+                <span class="chapter-number">06</span>
+                <div>
+                  <h3>花园</h3>
+                  <p>Garden</p>
+                </div>
+                <label class="done-check">
+                  <input type="checkbox" data-progress-check="chapter-garden" />
+                  <span>已通关</span>
+                </label>
+              </div>
+              <div class="chapter-body">
+                <div>
+                  <h4>小节路线</h4>
+                  <p>Green Fingers、Weed Whacking、Trespassing、Frog Pond、Affliction</p>
+                </div>
+                <div>
+                  <h4>核心机制</h4>
+                  <p>Cody 会频繁切换植物形态，May 负责清障、浇灌、攻击和保护路线。</p>
+                </div>
+                <div>
+                  <h4>通关重点</h4>
+                  <p>先清掉会持续干扰的杂草和敌人，再解机关。Cody 变形前要先说清楚自己准备变成什么。</p>
+                </div>
+                <div>
+                  <h4>常见卡点</h4>
+                  <p>青蛙和植物平台段落要把路线当成接力：一人先铺路，另一人通过后马上回头帮对方。</p>
+                </div>
+              </div>
+              <p class="callout">搭档口令：我铺路，你清场。</p>
+            </article>
+
+            <article class="chapter-card reveal" id="chapter-attic" data-stage="late boss" data-keywords="阁楼 音乐 舞台 交响乐 彩排 终章 节奏 boss">
+              <div class="chapter-topline">
+                <span class="chapter-number">07</span>
+                <div>
+                  <h3>阁楼</h3>
+                  <p>The Attic</p>
+                </div>
+                <label class="done-check">
+                  <input type="checkbox" data-progress-check="chapter-attic" />
+                  <span>已通关</span>
+                </label>
+              </div>
+              <div class="chapter-body">
+                <div>
+                  <h4>小节路线</h4>
+                  <p>Setting the Stage、Rehearsal、Symphony、Turn Up、A Grand Finale</p>
+                </div>
+                <div>
+                  <h4>核心机制</h4>
+                  <p>音乐、声波、节拍和舞台机关成为主轴，很多段落更考验共同节奏而不是单人反应。</p>
+                </div>
+                <div>
+                  <h4>通关重点</h4>
+                  <p>看清节奏提示后再行动。不要在音乐机关里连按乱冲，先听一轮循环，再按节拍进入。</p>
+                </div>
+                <div>
+                  <h4>常见卡点</h4>
+                  <p>终盘平台会同时给两个人压力，建议一个人喊节拍，另一个人只反馈“到位”或“没到”。</p>
+                </div>
+              </div>
+              <p class="callout">搭档口令：听一轮，再进场。</p>
+            </article>
+          </div>
+
+          <p class="empty-state" data-empty hidden>没有匹配的章节，换一个关键词试试。</p>
+        </div>
+      </section>
+
+      <section class="section completion-section" id="completion" aria-labelledby="completion-title">
+        <div class="section-inner completion-layout">
+          <div class="section-heading reveal">
+            <p class="section-kicker">补漏与回放</p>
+            <h2 id="completion-title">通关不是结束，章节选择才是补收集的入口</h2>
+            <p>
+              《双人成行》的主线推进是线性的，但每个大章内都有可回放小节。首次游玩不用为了收集打断节奏，结局后再回头补迷你游戏会轻松很多。
+            </p>
+          </div>
+          <div class="checklist-panel reveal" aria-labelledby="checklist-title">
+            <h3 id="checklist-title">一周目检查表</h3>
+            <label><input type="checkbox" data-progress-check="prep-coop" /> 两名玩家都能稳定语音沟通</label>
+            <label><input type="checkbox" data-progress-check="prep-pass" /> 线上游玩已确认 Friend's Pass 或完整游戏权限</label>
+            <label><input type="checkbox" data-progress-check="prep-mini" /> 每章开放区域先绕边探索</label>
+            <label><input type="checkbox" data-progress-check="prep-replay" /> 通关后用章节选择补漏迷你游戏</label>
+            <label><input type="checkbox" data-progress-check="prep-switch" /> 重玩时交换角色体验另一套能力</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="section source-section" id="sources" aria-labelledby="sources-title">
+        <div class="section-inner sources-layout">
+          <div class="section-heading reveal">
+            <p class="section-kicker">资料来源</p>
+            <h2 id="sources-title">内容依据与说明</h2>
+            <p>
+              本页的章节结构参考公开攻略资料，游戏类型、平台和合作规则优先参考 Hazelight 与 EA 官方页面。攻略文字为重新整理的中文通关建议，不搬运官方截图。
+              每章通关图片为本项目原创绘制的示意图，用于教学和速查。
+            </p>
+          </div>
+          <div class="source-links reveal">
+            <a href="https://www.hazelight.se/games/it-takes-two/" target="_blank" rel="noreferrer">
+              <span>官方游戏信息</span>
+              <strong>Hazelight Studios</strong>
+            </a>
+            <a href="https://www.ea.com/games/it-takes-two/it-takes-two/features/itt-friends-pass" target="_blank" rel="noreferrer">
+              <span>联机与 Friend's Pass</span>
+              <strong>Electronic Arts</strong>
+            </a>
+            <a href="https://www.lapakgaming.com/blog/en-sg/others-it-takes-two-chapter-list/" target="_blank" rel="noreferrer">
+              <span>章节与小节列表</span>
+              <strong>Lapakgaming</strong>
+            </a>
+            <a href="https://www.exitlag.com/blog/it-takes-two-chapters-guide/" target="_blank" rel="noreferrer">
+              <span>章节顺序与通关节奏</span>
+              <strong>ExitLag Blog</strong>
+            </a>
+            <a href="https://www.gamepur.com/guides/it-takes-two-the-shed-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">
+              <span>工具棚流程案例</span>
+              <strong>Gamepur The Shed</strong>
+            </a>
+            <a href="https://www.gamepur.com/guides/it-takes-two-the-tree-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">
+              <span>大树流程案例</span>
+              <strong>Gamepur The Tree</strong>
+            </a>
+            <a href="https://www.gamepur.com/guides/it-takes-two-roses-room-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">
+              <span>罗斯房间流程案例</span>
+              <strong>Gamepur Rose's Room</strong>
+            </a>
+            <a href="https://www.gamepur.com/guides/it-takes-two-cuckoo-clock-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">
+              <span>布谷鸟钟流程案例</span>
+              <strong>Gamepur Cuckoo Clock</strong>
+            </a>
+            <a href="https://www.gamepur.com/guides/it-takes-two-snowglobe-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">
+              <span>雪景球流程案例</span>
+              <strong>Gamepur Snow Globe</strong>
+            </a>
+            <a href="https://www.gamepur.com/guides/it-takes-two-garden-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">
+              <span>花园流程案例</span>
+              <strong>Gamepur Garden</strong>
+            </a>
+            <a href="https://www.gamepur.com/guides/it-takes-two-the-attic-gameplay-tips-and-walkthrough-guide" target="_blank" rel="noreferrer">
+              <span>阁楼流程案例</span>
+              <strong>Gamepur The Attic</strong>
+            </a>
+            <a href="https://www.powerpyx.com/it-takes-two-all-minigame-locations/" target="_blank" rel="noreferrer">
+              <span>25 个迷你游戏位置</span>
+              <strong>PowerPyx Minigames</strong>
+            </a>
+            <a href="https://www.powerpyx.com/it-takes-two-trophy-guide-roadmap/" target="_blank" rel="noreferrer">
+              <span>奖杯与补漏路线</span>
+              <strong>PowerPyx Roadmap</strong>
+            </a>
+            <a href="https://hone.gg/blog/it-takes-two-chapters-list/" target="_blank" rel="noreferrer">
+              <span>章节机制与 Boss 要点</span>
+              <strong>Hone Chapter List</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>本静态页用于中文通关辅助；旧版《双人成行》简介站已保留在原项目目录。</p>
+      <a href="#top">回到顶部</a>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

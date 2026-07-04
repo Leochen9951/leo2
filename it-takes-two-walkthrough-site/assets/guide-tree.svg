@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">大树通关图解</title>
+  <desc id="desc">展示大树章节中树脂、火柴、Boss 场地和逃离飞行段的通关思路。</desc>
+  <style>
+    .bg{fill:#edf7e5}.panel{fill:#fffef8;stroke:#214d30;stroke-width:4}.trunk{fill:#8a5536;stroke:#4f2d1e;stroke-width:5}.leaf{fill:#4f8a45}.sap{fill:#f2c94c}.fire{fill:#e95d48}.dark{fill:#18212b}.line{stroke:#18212b;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;fill:none;marker-end:url(#arrow)}.note{fill:#18212b;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:800}.small{font-size:24px}.mid{font-size:30px}.big{font-size:42px}.tag{fill:#ffffff;font-family:"Microsoft YaHei",Arial,sans-serif;font-weight:900;font-size:27px}
+  </style>
+  <defs><marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#18212b"/></marker></defs>
+  <rect class="bg" width="960" height="540"/>
+  <rect class="panel" x="42" y="40" width="876" height="460" rx="24"/>
+  <text class="note big" x="82" y="98">02 大树：树脂先挂点，火柴再引爆</text>
+  <path class="trunk" d="M475 140 C420 220 420 345 360 446 L604 446 C544 348 544 225 485 140 Z"/>
+  <circle class="leaf" cx="342" cy="174" r="64"/><circle class="leaf" cx="456" cy="143" r="74"/><circle class="leaf" cx="592" cy="180" r="66"/>
+  <circle class="sap" cx="236" cy="224" r="48"/><text class="tag" x="205" y="233">树脂</text>
+  <path class="line" d="M282 230 C338 242 374 279 410 319"/>
+  <path class="fire" d="M680 180 C650 224 720 227 692 276 C758 236 730 196 706 166 C696 146 704 131 722 111 C688 128 670 148 680 180 Z"/>
+  <text class="tag" x="665" y="251">点火</text>
+  <path class="line" d="M650 250 C598 275 558 302 520 330"/>
+  <rect x="366" y="312" width="228" height="84" rx="18" fill="#2f4b3a" stroke="#18212b" stroke-width="4"/>
+  <circle class="sap" cx="421" cy="354" r="22"/><circle class="sap" cx="484" cy="354" r="22"/><circle class="sap" cx="547" cy="354" r="22"/>
+  <text class="tag" x="403" y="434">Boss 格栅铺满后引爆</text>
+  <rect x="100" y="338" width="190" height="82" rx="16" fill="#0f766e"/>
+  <text class="tag" x="133" y="371">战斗区</text><text class="tag" x="122" y="402">先清小怪</text>
+  <rect x="672" y="338" width="190" height="82" rx="16" fill="#2466ad"/>
+  <text class="tag" x="706" y="371">逃离区</text><text class="tag" x="698" y="402">一人喊路</text>
+  <path class="line" d="M292 380 H360"/>
+  <path class="line" d="M600 380 H668"/>
+  <text class="note small" x="92" y="464">口令：我上树脂，你点火；飞行段只保留一个主指挥。</text>
+</svg>
